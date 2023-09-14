@@ -11,9 +11,6 @@ jobs:
         steps:
         - name: Setup PMD
           uses: sfdx-actions/setup-pmd@v1
-
-        - name: Run PMD
-          uses: actions/setup-node@v2
           with:
             node-version: '16'
         - run: pmd -d . -f text
