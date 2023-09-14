@@ -12,8 +12,6 @@ jobs:
         
         - name: Archive dependency check reports
         - uses: sburris/dependency-check-action@master
-          with:
-            Project-Name: TestApp
         - uses: actions/upload-artifact@v1
           with:
             name: reports
