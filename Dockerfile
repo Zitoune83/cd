@@ -1,9 +1,12 @@
 FROM node:alpine
 
+RUN adduser -D nonroot
+USER nonroot
+
 LABEL maintainer "eric.muellenbach@yncrea.fr"
 
-ADD -D nonroot 
-USER nonroot
+ 
+
 
 ADD app.js .
 
