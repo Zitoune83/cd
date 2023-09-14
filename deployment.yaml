@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: webserver
-        image: mywebserver:1.0
+        image: olive1383/cd:sha-5dc454b
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
