@@ -18,10 +18,6 @@ jobs:
             node-version: '16'
         - run: pmd -d . -f text
        
-        - uses: sfdx-actions/setup-pmd@v1
-        - name: run-pmd
-          using: 'node16'
-          run: pmd -d . -f text
         - uses: actions/checkout@v2
         - name: build-push
           uses: docker/build-push-action@v1
