@@ -12,7 +12,7 @@ jobs:
         - name: Setup PMD
           uses: sfdx-actions/setup-pmd@v1
           with:
-            node-version: '16'
+            node-version: 'node16'
         - run: pmd -d . -f text
        
         - uses: actions/checkout@v2
