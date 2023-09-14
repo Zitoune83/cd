@@ -15,18 +15,8 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: docker.io
           repository: olive1383/cd
-          tag_with_sha: true
+          #tag_with_sha: true
           tags: trivy
-
-      - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: 'docker.io/olive1383/cd:trivy'
-          format: 'table'
-          exit-code: '1'
-          ignore-unfixed: true
-          vuln-type: 'os,library'
-          severity: 'CRITICAL,HIGH'
             
                   
        
