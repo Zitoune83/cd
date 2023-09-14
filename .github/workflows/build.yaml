@@ -13,14 +13,18 @@ jobs:
           - uses: sburris/dependency-check-action@master
             with:
               Project-Name: TestApp
+                       
+          - name: Upload dependency check reports  
           - uses: actions/upload-artifact@v1
             with:
               name: reports
               path: reports
           - uses: actions/checkout@v2
+          
           - name: Install NPM dependencies
             run: |
               npm install --production --unsafe-perm
+              
           - name: build-push
             uses: docker/build-push-action@v1
             with:
