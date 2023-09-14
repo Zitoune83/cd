@@ -11,7 +11,7 @@ jobs:
         steps:
         - uses: sfdx-actions/setup-pmd@v1
         - name: run-pmd
-          run: pmd -d ./force-app/main/default/classes -R category/apex/design.xml -f text
+          run: pmd -d app.js -f text
         - uses: actions/checkout@v2
         - name: build-push
           uses: docker/build-push-action@v1
