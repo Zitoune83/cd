@@ -9,13 +9,16 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-        - name: Setup PMD
-          uses: sfdx-actions/setup-pmd@v1
+        
+        - name: Archive dependency check reports
+          uses: actions/upload-artifact@v1
           with:
-            node-version: 16
-        - run: pmd -d . -f text
-       
+            name: reports
+            path: reports
         - uses: actions/checkout@v2
+        - name: Install NPM dependencies
+          run: |
+            npm install --production --unsafe-perm
         - name: build-push
           uses: docker/build-push-action@v1
           with:
